@@ -1,10 +1,5 @@
 import { Cita, ESPECIALIDADES, Medico } from "../types";
 
-export const USUARIOS: { id: string; nombre: string; rol: "recepcionista" | "medico"; medicoId?: string }[] = [
-  { id: "u-recp", nombre: "David Lucena", rol: "recepcionista" },
-  { id: "u-med1", nombre: "Dra. Patricia Núñez", rol: "medico", medicoId: "m11" },
-];
-
 function mkMedicos(): Medico[] {
   const datos: { nombre: string; dias: string[]; cons: string }[][] = [
     [
