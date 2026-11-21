@@ -21,10 +21,17 @@
 
 ## Decisions, constraints & rationale
 
-- All test/predefined users removed from the data file — no leftover references.
+- **Project converted from TypeScript to plain JavaScript.**
+  - Source files use `.js`/`.jsx`; all `.ts`/`.tsx` removed.
+  - Types, interfaces, and TypeScript annotations stripped from all source.
+  - `tsconfig.json` deleted; TypeScript dependencies removed from `package.json` and lockfile.
+  - Vite config is `vite.config.js`; ESLint and Tailwind configured for `.js`/`.jsx`.
+  - `index.html` updated to reference `main.jsx`.
+  - Build and lint verified passing after conversion.
 - New users stored in browser localStorage (no backend for user persistence yet).
 - Background image referenced as a local asset, not remote URL.
 - Dark overlay layer applied over background image to maintain text contrast.
+- All test/predefined users removed from the data file — no leftover references.
 
 ## Open questions & assumptions
 
@@ -32,3 +39,4 @@
 - Login/auth flow after selecting or creating a user not yet detailed.
 - Whether doctor association is required only for "médico" role or optional for all roles — assumed role-dependent.
 - No explicit color palette or typography system defined yet beyond the serif italic title.
+- `.bolt/prompt` contains global instructions (beauty/production-grade, JSX + Tailwind, lucide-react, `@/` alias) — not restated here.
